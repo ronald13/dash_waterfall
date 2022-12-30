@@ -1,7 +1,6 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-
 def create_waterfall(x,y):
     fig = go.Figure(go.Waterfall(
         name = "Movie",
@@ -20,11 +19,5 @@ def create_waterfall(x,y):
     fig.update_traces(hovertemplate=None)
     fig.update_layout( height=450,
                        margin=dict(t=80, b=50, l=0, r=50, pad=20),
-    #                    hovermode="x unified",
-    #                    # xaxis_title=' ', yaxis_title=" ",
-    #                    # plot_bgcolor='#333', paper_bgcolor='#333',
-    #                    # hoverlabel_bgcolor = '#000',
-    #                    # title_font=dict(size=25, color='#8a8d93', family="Lato, sans-serif"),
-    #                    # font=dict(color='#8a8d93'))
                        )
     return fig
