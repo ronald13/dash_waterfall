@@ -3,8 +3,12 @@ import pandas as pd
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 import dash_trich_components as dtc
+from chart import create_waterfall
 
 # read data
+x = ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"]
+y = [100, 400, -100, 230, -130, 160, 240, 248, 204, 743, 1121, 1366, -1228, -84]
+
 
 app = Dash(
     __name__, external_stylesheets=[dbc.themes.BOOTSTRAP],
@@ -35,6 +39,8 @@ app.layout = html.Div([
                     html.Div([
                         html.Div([
                             html.Div('', className="table_name"),
+                            dcc.Graph(figure=create_waterfall(x,y),
+                                      config={"displayModeBar": False}),
 
                         ], style={'width':'100%'}),
                     ], className='dash__graph_block'),
